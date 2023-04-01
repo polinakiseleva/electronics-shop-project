@@ -50,11 +50,11 @@ class Item:
 
     @classmethod
     def instantiate_from_csv(cls):
-
         with open(CVS_FILE, encoding='windows-1251') as file:
             file_reader = csv.DictReader(file, delimiter=',')
             for item in file_reader:
-                cls.all.append(item)
+                name, price, quantity = item.get('name'), int(item.get('price')), int(item.get('quantity'))
+                cls.all.append(name, price, quantity)
 
     @staticmethod
     def string_to_number(string: str) -> int:
