@@ -34,3 +34,11 @@ def test_incorrect_name(item):
 
 def test_string_to_number():
     assert Item.string_to_number('8.4') == 8
+
+
+def test_dunder_repr(item):
+    assert repr(item) == "Item('Смартфон', 10000, 20)"
+
+
+def test_dunder_str(item):
+    assert str(item) == 'Смартфон'
