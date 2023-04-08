@@ -42,3 +42,13 @@ def test_dunder_repr(item):
 
 def test_dunder_str(item):
     assert str(item) == 'Смартфон'
+
+
+def test_normal_add(item):
+    test_item = Item('Телефон', 1000, 3)
+    assert item + test_item == 23
+
+
+def test_error_add(item):
+    with pytest.raises(TypeError):
+        result = item + 10
