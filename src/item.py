@@ -30,6 +30,11 @@ class Item:
     def __str__(self):
         return f'{self.__name}'
 
+    def __add__(self, other):
+        if not isinstance(other, Item):
+            raise TypeError('Действие допустимо только для экземпляров класса Item или Phone')
+        return self.quantity + other.quantity
+
     @property
     def name(self):
         return self.__name
